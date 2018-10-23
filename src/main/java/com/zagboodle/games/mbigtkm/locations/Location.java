@@ -12,7 +12,7 @@ public class Location {
         this.name = name;
         this.description = description;
         sections = new ArrayList<Section>();
-        sections.add(new Section());
+        sections.add(new Section(this));
     }
 
     public String getName() {

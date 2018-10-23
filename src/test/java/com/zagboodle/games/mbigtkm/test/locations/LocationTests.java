@@ -32,7 +32,7 @@ class LocationTests {
 
     @Test
     void test_location_getSection_isNotNull() {
-        location.addSection(new Section());
+        location.addSection(new Section(location));
         assertNotNull(location.getSection(1));
     }
 
