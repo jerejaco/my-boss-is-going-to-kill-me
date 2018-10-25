@@ -12,15 +12,18 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class SectionTests {
 
-    private static Section section = null;
     private static Location location = null;
+    private static Section section = null;
+    private static Section leadsto = null;
     private static Exit exit = null;
 
     @BeforeAll
     static void init() {
         location = new Location("location-name", "location description");
         section = location.getDefaultSection();
-        exit = new Exit(Direction.NORTH);
+        location.addSection(new Section(location));
+        leadsto = location.getSection(1);
+        exit = new Exit("exit description", Direction.NORTH, leadsto);
         section.addExit(exit);
     }
 
@@ -41,7 +44,7 @@ class SectionTests {
 
     @Test
     void test_Section_addExit() {
-        section.addExit(new Exit(Direction.WEST));
+        section.addExit(new Exit("other exit description", Direction.WEST, leadsto));
         assertNotNull(section.getExit(Direction.WEST));
     }
 
@@ -52,7 +55,7 @@ class SectionTests {
 
     @Test
     void test_Section_getExit() {
-        section.addExit(new Exit(Direction.WEST));
+        section.addExit(new Exit("other exit description", Direction.WEST, leadsto));
         assertNotNull(section.getExit(Direction.WEST));
     }
 
