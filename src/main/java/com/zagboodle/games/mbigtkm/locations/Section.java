@@ -16,6 +16,10 @@ public class Section {
         this.exits = new ArrayList<Exit>();
     }
 
+    public Section() {
+        this(new Location());
+    }
+
     public String getName() {
         return name;
     }
@@ -28,8 +32,9 @@ public class Section {
         return exits;
     }
 
-    public void addExit(Exit exit) {
+    public Section addExit(Exit exit) {
         exits.add(exit);
+        return this;
     }
 
     public Exit getDefaultExit() {
@@ -42,7 +47,7 @@ public class Section {
                 return exit;
             }
         }
-        return null;
+        return new Exit();
     }
 
     public Location getLocation() {

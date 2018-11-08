@@ -15,6 +15,13 @@ public class Location {
         sections.add(new Section(this));
     }
 
+    public Location() {
+        this.name = "the_void";
+        this.description = "You are floating in an endless void.  You should not be here.";
+        sections = new ArrayList<Section>();
+        sections.add(new Section(this));
+    }
+
     public String getName() {
         return name;
     }

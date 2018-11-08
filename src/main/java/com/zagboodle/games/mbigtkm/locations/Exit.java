@@ -12,6 +12,14 @@ public class Exit {
         this.leadsTo = leadsTo;
     }
 
+    public Exit(Direction direction, Section leadsTo) {
+        this("door", direction, leadsTo);
+    }
+
+    Exit() {
+        this("void_exit", Direction.SOUTH, new Section());
+    }
+
     public String getDescription() {
         return description;
     }

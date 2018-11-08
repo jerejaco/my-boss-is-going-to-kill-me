@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static com.zagboodle.games.mbigtkm.gameplay.Util.getSection;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class UtilTests {
@@ -34,11 +35,11 @@ class UtilTests {
 
     @Test
     void test_Util_getDefaultSection() {
-        assertEquals(location2.getDefaultSection(), Util.getDefaultSection("location2"));
+        assertEquals(location2.getDefaultSection(), getSection("location2"));
     }
 
     @Test
     void test_Util_getSection() {
-        assertEquals(section2, Util.getSection("location2", 1));
+        assertEquals(section2, getSection("location2", 1));
     }
 }
