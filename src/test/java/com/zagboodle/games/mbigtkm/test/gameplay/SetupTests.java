@@ -3,11 +3,8 @@ package com.zagboodle.games.mbigtkm.test.gameplay;
 import com.zagboodle.games.mbigtkm.gameplay.Setup;
 import com.zagboodle.games.mbigtkm.gameplay.Util;
 import com.zagboodle.games.mbigtkm.locations.Direction;
-import com.zagboodle.games.mbigtkm.locations.Location;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
